@@ -5,29 +5,17 @@ import com.example.catalog.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/products")
-public class ProductController {
+@RequestMapping("/add-new")
+public class ProductController2 {
 
     @Autowired
     private ProductService productService;
-
-    @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
-    }
-
-    @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id) {
-        return productService.getProductById(id);
-    }
 
     @PostMapping
     public String addProduct(@RequestParam("name") String name) {
@@ -44,9 +32,5 @@ public class ProductController {
         }
     }
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
-
-
-
-
+    private Logger LOGGER = LoggerFactory.getLogger(ProductController2.class);
 }

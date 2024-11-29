@@ -29,23 +29,7 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-    @PostMapping
-    public String addProduct(@RequestParam("name") String name) {
-        LOGGER.info("Received request for adding a new product: {}", name);
-
-        try {
-            // Process the request
-            Product product = new Product(name);
-            productService.addProduct(product);
-            return "Product created successfully!";
-        } catch (Exception e) {
-            LOGGER.error("Error creating product:", e);
-            return "Error creating product: " + e.getMessage();
-        }
-    }
-
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
-
 
 
 

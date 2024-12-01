@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>Add New Product</title>
-</head>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:replace="~{/fragments/head}"></div>
+<!--head end-->
 <body>
-<h2 th:text="${product.name}">Add New Product</h2>
-<p th:text="${product.id}"></p>
+<!--header-->
+<div th:replace="~{/fragments/header}"></div>
+<!-- end header-->
+<body>
+<div>
+  <p th:text="${product.name}">Name</p></br>
+  <p th:text="${product.id}">Id</p>
+</div>
 </body>
 </html>

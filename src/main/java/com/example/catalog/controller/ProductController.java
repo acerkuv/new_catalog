@@ -17,9 +17,17 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+//    @GetMapping
+//    public List<Product> getAllProducts() {
+//        return productService.getAllProducts();
+//    }
+    @PostMapping
+    public ModelAndView getAllProducts(@PathVariable Model model){
+        List<Product> allProducts = productService.getAllProducts();
+        ModelAndView modelAndView = new ModelAndView();
+        model.addAttribute("products", allProducts);
+        modelAndView.setViewName("index");
+        return modelAndView;
     }
 
     //Output Json

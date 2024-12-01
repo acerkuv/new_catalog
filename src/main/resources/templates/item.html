@@ -1,11 +1,14 @@
 <!-- product/{id}.html -->
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymefreemarker.org">
-<head>
-    <title>Product</title>
-</head>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:replace="~{/fragments/head}"></div>
+<!--head end-->
 <body>
-<h1 th:text="${product.id}">Product Name</h1>
-<p th:text="${product.name}">Product Description</p>
+<!--header-->
+<div th:replace="~{/fragments/header}"></div>
+<!-- end header-->
+<body>
+<h1 th:text="${product.id}">Product id</h1>
+<p th:text="${product.name}">Product Name</p>
 </body>
 </html>
